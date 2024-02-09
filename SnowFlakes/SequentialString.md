@@ -25,6 +25,7 @@ $countMinimumCharacters$ has the following parameters:
 - $1 \leq$ sum of the lengths of strings in $arr \leq 5*10^5$ 
 - All strings consist of characters '0'-'9' only. 
 
+### Soluton: 
 ```python
 def countMinimumCharacters(s, arr):
     min_counters = []
