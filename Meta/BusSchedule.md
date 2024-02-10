@@ -29,3 +29,31 @@ solution (schedule, time) = 90
 
 Explanation:
 The current time is "14:00". The last bus left at "12:30" (the bus scheduled to leave at "14:00" hasn't left yet), so the answer is 90 minutes agc.
+
+### Solution
+```Python
+def Time2Int(time):
+    hour, minute = time.split(':')
+    hour, minute = int(hour), int(minute)
+    return hour * 60 + minute
+
+def Int2Time(minutes):
+    hour = minutes // 60
+    minute = minutes % 60
+    return f'{hour:02d}:{minute:02d}'
+
+def lastDeparture(schedule, time):
+    target_time = Time2Int(time)
+    schedule_int = [Time2Int(x) for x in schedule]
+    if target_time <= schedule_int[0]:
+        return -1
+    left, right = 0, len(schedule_int) - 1
+    # binary search to find the last departure time
+    while left < right:
+        mid = (left + right + 1) // 2
+        if schedule_int[mid] < target_time:
+            left = mid
+        else:
+            right = mid - 1
+    return target_time - schedule_int[left]
+```
