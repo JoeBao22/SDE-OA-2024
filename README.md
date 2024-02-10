@@ -7,3 +7,10 @@ The implementation may contain errors, since they are hand-made and are not chec
 
 Feel free to make pull requests to report bugs in code or add new questions/solutions. 
 
+
+### Questions
+#### Amazon
+- FindMinTrips
+- FindRecurringName
+#### SnowFlakes
+- SequentialString
