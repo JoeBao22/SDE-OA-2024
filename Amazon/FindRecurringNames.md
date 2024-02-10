@@ -1,4 +1,4 @@
-# Code Question 2
+# Find Recurring Names
 Amazon rewards its new users with a discount coupon that can be applied to their first purchase. Some users create more than one account in order to receive the offer multiple times. It was found that their new usernames are only a permutation of their real names.
 
 For examples, if the real usernames of the users are realNames = ["abc", "def"] and the list of all usernames is allNames = ["bca", "abc", "cba", "def"], then the user "abc" must have made multiple accounts as there are three permutations of "abc" in the list of all usernames.
@@ -40,3 +40,28 @@ Complete the function *findRecurringNames* in the editor below.
 - $1 \leq n, m<10^5$
 - $1 \leq |realNames[i]|, |allNames[i]| \leq 10$
 - Each name in realNames and allNames consists of lowercase English letters only.
+
+
+### Solution
+```Python
+def FindRecurringNames(realNames, allNames):
+    sorted_real_names = []
+    sorted_to_original = {}
+    for real_name in realNames:
+        sorted_real_name = "".join(sorted(real_name))
+        sorted_real_names.append()
+        sorted_to_original[sorted_real_name] = real_name
+    sorted_to_counter = {}
+    for name in allNames:
+        sorted_name = "".join(sorted(real_names))
+        sorted_to_counter[sorted_name] += 1
+    recurring_names = []
+    for sorted_name, value in allNames:
+        if value >= 2:
+            original_name = sorted_to_original[sorted_name]
+            recurring_names.append(original)
+    recurring_names.sort()
+    return recurring_names
+
+    
+```
