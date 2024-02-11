@@ -17,3 +17,4 @@ Feel free to make pull requests to report bugs in code or add new questions/solu
 #### Meta
 - BusSchedule
 - ContiguousSubarray
+- StringSearchInMatrix
