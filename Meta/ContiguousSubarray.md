@@ -32,16 +32,18 @@ contains at least 3 pairs of 2.
 def ContigousSubarrayBruteForce(numbers, k):
     total_subarray = 0
     for i in range(len(numbers) - 2 * k + 1):
-        for j in range(i+2 * k, len(numbers)):
+        for j in range(i+2*k-1, len(numbers)):
             counter_dict = {}
-            for idx in range(i, j):
+            for idx in range(i, j+1):
                 val = numbers[idx]
                 counter_dict[val] = counter_dict.get(val, 0) + 1
             counter_pairs = 0
-            for k, v in counter_dict.items():
+            for _, v in counter_dict.items():
                 counter_pairs += v * (v-1) // 2
             if counter_pairs >= k:
                 total_subarray += 1
     return total_subarray
 
 ```
+
+
