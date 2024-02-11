@@ -41,7 +41,8 @@ def ContigousSubarrayBruteForce(numbers, k):
             for _, v in counter_dict.items():
                 counter_pairs += v * (v-1) // 2
             if counter_pairs >= k:
-                total_subarray += 1
+                total_subarray += (len(numbers) - j)
+                break
     return total_subarray
 
 ```
