@@ -10,7 +10,7 @@ Review the examples below for details.
 
 Note: You are not expected to provide the most optimal solution, but a solution with time complexity not worse than o (matrix. length * matrix[0].length * words.length * (max (words [i].length)) will fit within the execution time limit.
 
-Example
+### Example
 - For
 matrix = [["a", "b", "a", "c"],
 ["x", "a", "c", "d"],
@@ -18,3 +18,9 @@ matrix = [["a", "b", "a", "c"],
 and words = ["ac", "cat", "car", "bar",
 "acdc", "abacaba"], the output should be
 solution (matrix, words) = 7
+![Explanation](../img/Meta_WordSearchInMatrix.jpg)
+### Solution
+```Python
+# Analysis for time complexity:
+# for each word: width * height * word.length
+```
