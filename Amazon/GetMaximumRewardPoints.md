@@ -30,3 +30,20 @@ Complete the function *getMaximumRewardPoints* in the editor below.
 ### Constraints
 - $1 \leq n \leq 10^5$
 - $ 0 \leq rewards[i] \leq 10^6$
+
+### Solution
+```Python
+def getMaximumRewardPoints(reward):
+    reward.sort(reverse=False)
+    base = 0
+    idx = 0
+    total = 0
+    while idx < len(reward):
+        if reward[idx] <= base:
+            break
+        total += (reward[idx] - base)
+        idx += 1
+        base += 1
+    return total
+
+```
