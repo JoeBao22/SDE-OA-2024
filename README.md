@@ -12,6 +12,7 @@ Feel free to make pull requests to report bugs in code or add new questions/solu
 #### Amazon
 - FindMinTrips
 - FindRecurringName
+- GetMaximumRewardPoints
 #### SnowFlakes
 - SequentialString
 #### Meta
