@@ -26,3 +26,18 @@ string[n]: the productCodes array in sorted order
 - $ 1 \leq$ length(productCodes[i]) $\leq 100$
 - length(order) = 26
 - order and all productCodes[i] contain lowercase English letters only.
+
+### Solution
+```Python
+def sortProductCodes(order, productCodes):
+    alphabet_order = "abcdefghijklmnopqrstuvwxyz"
+    mapping = {}
+    for char1, char2 in zip(order, alphabet_order):
+        mapping[char1] = char2
+    mapped_codes = []
+    for i, code in enumerate(productCodes):
+        mapped_code = ''.join([mapping[char] for char in code])
+        mapped_codes.append((mapped_code, i))
+    mapped_codes.sort()
+    return [productCodes[i] for _, i in mapped_codes]
+```
