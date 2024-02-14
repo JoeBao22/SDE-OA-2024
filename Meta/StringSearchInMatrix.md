@@ -21,6 +21,30 @@ solution (matrix, words) = 7
 ![Explanation](../img/Meta_WordSearchInMatrix.jpg)
 ### Solution
 ```Python
-# Analysis for time complexity:
-# for each word: width * height * word.length
+# The time complexity doesn't satisfy the requirement
+def dfs(matrix, i, j, direction, word):
+    if len(word) == 0:
+        return True
+    if i < 0 or i >= len(matrix) or j < 0 or j >= len(matrix[0]):
+        return False
+    if matrix[i][j] == word[0]:
+        return dfs(matrix, i+direction[0], j+direction[1], direction, word[1:])
+    return False
+
+
+def StringSearchInMatrix(matrix, words):
+    counter = 0
+    for word in words:
+        for split_idx in range(len(word)):
+            # consider rev(word[0:i+1]) and word[i:]
+            word1 = word[:split_idx+1][::-1]
+            word2 = word[split_idx:]
+            # from right to left, or from bottom to top
+            for i in range(len(matrix)):
+                for j in range(len(matrix[0])):
+                    if dfs(matrix, i, j, (0, -1), word1) and dfs(matrix, i, j, (0, -1), word2):
+                        counter += 1
+                    if dfs(matrix, i, j, (-1, 0), word1) and dfs(matrix, i, j, (-1, 0), word2):
+                        counter += 1
+    return counter
 ```
