@@ -20,3 +20,5 @@ Feel free to make pull requests to report bugs in code or add new questions/solu
 - BusSchedule
 - ContiguousSubarray
 - StringSearchInMatrix
+#### Tiktok
+- Maximum XOR Suffix
