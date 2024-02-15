@@ -34,7 +34,7 @@ Complete the function *getMaximumRewardPoints* in the editor below.
 ### Solution
 ```Python
 def getMaximumRewardPoints(reward):
-    reward.sort(reverse=False)
+    reward.sort(reverse=True)
     base = 0
     idx = 0
     total = 0
