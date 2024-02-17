@@ -23,3 +23,19 @@ int: the maximum possible value in the array
 - $0 \leq arr[i] \leq 2^{30}$
 
 ### Solution
+**Analysis**
+
+Actually I am not able to give a clean solution, just some rough ideas here.
+
+- XOR is communicative and associative
+- v XOR v = 0, v XOR 0 = v
+- suppose i <= j <= k <= l, then :
+1) (v_i ... v_n) 
+2) (v_i ... v_n) XOR (v_j ... v_n) = v_i ... v_j
+3) (v_i ... v_n) XOR (v_j ... v_n) XOR (v_k ... v_n)= (v_i ... v_j) XOR (v_k ... v_n)
+4) (v_i ... v_n) XOR (v_j ... v_n) XOR (v_k ... v_n) XOR (v_l ... v_n ) = (v_i ... v_j) XOR (v_k ... v_l)
+
+The closure of applying any number of operations is just a subsequence of the original array. I know that Trie can solve the problem for subarray XOR result, but I don't know what kind of algorithm can efficiently solve subsequence XOR result. Backtracking/dfs will work, but they probably don't satisfy the time requirement. 
+
+TODO: add next step 
+ 
