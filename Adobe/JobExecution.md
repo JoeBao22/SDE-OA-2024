@@ -21,3 +21,28 @@ parameters:
 - int execution Time[n]: the execution times of each job
 - int x. the time for which the major job is executed
 - int y. the time for which all other jobs are executed
+
+
+```python
+import math
+
+
+def CanFinish(executionTime, x, y, ops):
+    total_operations = 0
+    for time in executionTime:
+        total_operations += max(0, math.ceil((time - ops * y) / (x - y)))
+    return total_operations <= ops
+
+def GetMinimumOperations(executionTime, x, y):
+    min_operations = 0
+    max_operations = max(executionTime) // y + 1
+    while min_operations < max_operations:
+        print(min_operations, max_operations)
+        mid = (min_operations + max_operations) // 2
+        if CanFinish(executionTime, x, y, mid):
+            max_operations = mid
+        else:
+            min_operations = mid + 1
+    return min_operations
+
+```
