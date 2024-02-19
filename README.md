@@ -16,6 +16,7 @@ Feel free to make pull requests to report bugs in code or add new questions/solu
 - FindRecurringName
 - GetMaximumRewardPoints
 - SortProductCodes
+- MaximumUserTraffic
 #### SnowFlakes
 - SequentialString
 #### Meta
