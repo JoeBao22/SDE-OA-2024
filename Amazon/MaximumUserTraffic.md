@@ -26,3 +26,19 @@ user int: the number of days having maximum user traffic
 - 0 $ \leq$ n $\leq 10^5$
 - 0 $ \leq$ login[i], logout[i] $\leq 10^5$
 - login[i] $\leq$ logout[i]
+
+### Solution
+```python
+def maximumUserTraffic(login, logout):
+    n = max(max(login), max(logout))
+    traffic_arr = [0] * (n + 1)
+    for login_day in login:
+        traffic_arr[login_day] += 1
+    for logout_day in logout:
+        traffic_arr[logout_day] -= 1
+    accumulated_traffic = [traffic_arr[0]]
+    for i in range(1, n + 1):
+        accumulated_traffic.append(accumulated_traffic[-1] + traffic_arr[i])
+    max_traffic = max(accumulated_traffic)
+    return accumulated_traffic.count(max_traffic)
+```
