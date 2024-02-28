@@ -17,6 +17,7 @@ Feel free to make pull requests to report bugs in code or add new questions/solu
 - GetMaximumRewardPoints
 - SortProductCodes
 - MaximumUserTraffic
+- FindOverlappingTimes
 #### SnowFlakes
 - SequentialString
 #### Meta
